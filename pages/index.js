@@ -24,7 +24,10 @@ export default function Home({data}) {
   const handleSubmitVote = async (type) => {
     const hasVotedMj = localStorage.getItem("mj");
     const hasVotedLbj = localStorage.getItem("lbj");
-    if(hasVotedMj || hasVotedLbj)  return;
+    if(hasVotedMj || hasVotedLbj)  {
+      alert("You have already voted");
+      return;
+    };
 
     if(type === "lbj") {
       localStorage.setItem("lbj", "Goat");
