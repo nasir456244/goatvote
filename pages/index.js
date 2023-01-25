@@ -11,7 +11,7 @@ export default function Home({data}) {
   const totalVotes = votes?.lbj?.votes + votes?.mj?.votes
 
   const PostVote = async (vote) => {
-    const response = await fetch("http://goatvote.vercel.app/api/vote", {
+    const response = await fetch("https://goatvote.vercel.app/api/vote", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({ vote })
@@ -83,7 +83,7 @@ export default function Home({data}) {
 
 
 export const getServerSideProps = async () => {
-  const response = await fetch("http://goatvote.vercel.app/api/getVotes");
+  const response = await fetch("https://goatvote.vercel.app/api/getVotes");
   const data = await response.json()
 
   return {
